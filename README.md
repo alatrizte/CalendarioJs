@@ -1,4 +1,8 @@
+![Captura de pantalla](./Screenshot.png)
 # Calendario Modal con JS
+![Static Badge](https://img.shields.io/badge/version-1.0-green) ![Static Badge](https://img.shields.io/badge/license-GNU%203-blue)
+
+
 ### Calendario personalizado para los formularios tipo calendario. 
 Es una solución estética para crear un calendario modal que sea igual en todos los navegadores.
 
