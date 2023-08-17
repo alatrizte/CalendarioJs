@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popUpCalendario.css">
+    <style>
+        #fecha {
+            position: relative;
+        }
+        #buCal {
+            position: relative;
+            margin-left: 5px;
+        }
+        #calendario {
+            position: absolute;
+            top:26px;
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <main id="caja">
+        <h1 class="titulo">Calendario modal</h1>
+        <p>Calendario modal personalizado para formularios tipo fecha.</p>
+        <div id="fecha">
+            <input type="text" name="fecha" id="inputFecha">
+            <button id="buCal">Abrir</button>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab tempora officia debitis? Autem, adipisci? Beatae necessitatibus sint harum unde minus repudiandae illum, dolores nisi, doloribus amet sequi? Eos quasi vero, rem deserunt dolore perspiciatis est tenetur nam beatae. Labore ratione iusto saepe minima maxime tenetur alias aspernatur ab et suscipit, laborum sit velit in, ex fugiat odit reiciendis cupiditate a voluptas cumque assumenda dicta molestias tempora harum. A laudantium vitae sapiente inventore nisi impedit quidem assumenda recusandae laboriosam eum, quos illo est culpa, autem consequuntur distinctio rerum perspiciatis id facilis ea maiores reiciendis! Quis quibusdam adipisci quaerat in asperiores. Nemo asperiores eveniet fuga cumque cupiditate. Necessitatibus autem eligendi qui facilis, asperiores quidem consectetur, vitae aut nobis labore perferendis corporis est eum provident repellendus assumenda ratione eius ut quam non a nisi iste. Est facilis repudiandae voluptate doloremque nesciunt. Asperiores iure nobis unde distinctio eveniet, rem tempora ad minus quae perferendis.
+        </p>
+    </main>
+</body>
+    <script>
+        // Función que comprueba que el calendario modal no esté abierto
+        // En caso de que no está abierto abre una ventana modal mostrando el calendario.
+        const abrirCalendario = () => {
+            if (!document.getElementById("calendario")){
+                let calendario = document.getElementById("fecha");
+                const tempDiv = document.createElement('div');
+                tempDiv.setAttribute("id", "calendario");
+                calendario.insertAdjacentElement("afterbegin",tempDiv);
+                let cuadro = document.getElementById("calendario");
+                let fecha = document.getElementById("inputFecha").value;
+                let hoy = new Date();
+                if (fecha !== ""){
+                    let myDate = fecha.split("/");
+                    hoy = new Date(`${myDate[2]}/${myDate[1]}/${myDate[0]}`);
+                    if (isNaN(hoy.getTime())){
+                        hoy = new Date();
+                    }
+                } 
+                createCalendar(cuadro, hoy.getFullYear(), hoy.getMonth()+1, hoy.getDate());
+            }  
+        }
+        const botonCalendario = document.getElementById("buCal");
+        botonCalendario.addEventListener("click", abrirCalendario)
+    </script>
+    <script src="popUpCalendario.js"></script>
+</html>

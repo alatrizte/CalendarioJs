@@ -1,0 +1,80 @@
+:root {
+    --main-bg-color: #cccccc;
+    --day-bg-color: #e7e7e7;
+    --today-bg-color: #f09e5b;
+    --text-color: #3b3b3b;
+    --holiday-color: #b62020;
+}
+
+body {
+    font-family: 'Ubuntu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.grid-container {
+    width: 216px;
+    display: grid;
+    grid-template-columns: 30px 30px 30px 30px 30px 30px 30px;
+    gap: 1px;
+    background-color: var(--main-bg-color);
+    padding: 5px;
+    border-radius: 5px;
+}
+.grid-container .num, .numFest, .numHoy {
+    background-color: var(--day-bg-color);
+    border-radius: 3px;
+    text-align: center;
+    padding: 5px;
+    font-size: 15px;
+}
+.numHoy {
+    background-color: var(--today-bg-color);
+}
+
+.numFest {
+    color: var(--holiday-color);
+}
+
+.grid-container .num:hover, .numFest:hover {
+    background-color: var(--main-bg-color);
+    cursor: pointer;
+}
+.numHoy:hover {
+    background-color: orangered;
+}
+.nomDias{
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    text-align: center;
+    padding-bottom: 5px;
+}
+.mes {
+    grid-column: 3/6;
+    text-align: center;
+    color: var(--text-color);
+    padding: 3px;
+    font-weight: 800;
+}
+.anho {
+    grid-column: 3/6;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 30px;
+    font-weight: 800;
+}
+.control {
+    display: grid;
+    color: var(--text-color);
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+#close {
+    text-align: center;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+#close:hover {
+    color: var(--holiday-color);
+}
